@@ -3,8 +3,8 @@ var fs = require('fs');
 var path = require('path');
 var should = require('should');
 
-describe('parse', function() {
-  it('async', function() {
+describe('parse', function () {
+  it('async', function () {
     var expected = {
       indent_style: 'space',
       indent_size: 2,
@@ -16,12 +16,12 @@ describe('parse', function() {
     };
     var target = path.join(__dirname, '/app.js');
     var promise = editorconfig.parse(target);
-    return promise.then(function onFulfilled(result) {
+    return promise.then(function onFulfilled (result) {
       expected.should.eql(result);
     });
   });
 
-  it('sync', function() {
+  it('sync', function () {
     var expected = {
       indent_style: 'space',
       indent_size: 2,
@@ -36,8 +36,8 @@ describe('parse', function() {
   });
 });
 
-describe('parseFromFiles', function() {
-  it('async', function() {
+describe('parseFromFiles', function () {
+  it('async', function () {
     var expected = {
       indent_style: 'space',
       indent_size: 2,
@@ -56,12 +56,12 @@ describe('parseFromFiles', function() {
     configs.push(config);
     var target = path.join(__dirname, '/app.js');
     var promise = editorconfig.parseFromFiles(target, configs);
-    return promise.then(function onFulfilled(result) {
+    return promise.then(function onFulfilled (result) {
       expected.should.eql(result);
     });
   });
 
-  it('sync', function() {
+  it('sync', function () {
     var expected = {
       indent_style: 'space',
       indent_size: 2,
