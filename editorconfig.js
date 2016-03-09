@@ -176,7 +176,7 @@ function getConfigsForFilesSync(files) {
     if ((contents[0][1].root || '').toLowerCase() === 'true') {
       break;
     }
-  };
+  }
   return configs;
 }
 
