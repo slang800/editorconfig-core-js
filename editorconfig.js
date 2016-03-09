@@ -49,15 +49,15 @@ function getFilepathRoot(filepath) {
 }
 
 function processMatches(matches, version) {
-  // Set indent_size to "tab" if indent_size is unspecified and
-  // indent_style is set to "tab".
+  // Set indent_size to "tab" if indent_size is unspecified and indent_style is
+  // set to "tab".
   if ("indent_style" in matches && matches.indent_style === "tab" &&
     !("indent_size" in matches) && semver.gte(version, "0.10.0")) {
     matches.indent_size = "tab";
   }
 
-  // Set tab_width to indent_size if indent_size is specified and
-  // tab_width is unspecified
+  // Set tab_width to indent_size if indent_size is specified and tab_width is
+  // unspecified
   if ("indent_size" in matches && !("tab_width" in matches) &&
   matches.indent_size !== "tab")
     matches.tab_width = matches.indent_size;
@@ -98,8 +98,8 @@ function extendProps(props, options) {
       value = JSON.parse(value);
     } catch(e) {}
     if (typeof value === 'undefined' || value === null) {
-      // null and undefined are values specific to JSON (no special meaning
-      // in editorconfig) & should just be returned as regular strings.
+      // null and undefined are values specific to JSON (no special meaning in
+      // editorconfig) & should just be returned as regular strings.
       value = String(value);
     }
     props[key] = value;
