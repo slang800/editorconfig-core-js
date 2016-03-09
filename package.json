@@ -1,37 +1,17 @@
 {
   "name": "editorconfig",
-  "version": "0.13.2",
   "description": "EditorConfig File Locator and Interpreter for Node.js",
-  "keywords": [
-    "editorconfig",
-    "core"
-  ],
-  "main": "editorconfig.js",
+  "version": "0.13.2",
+  "author": "EditorConfig Team",
   "bin": {
     "editorconfig": "bin/editorconfig"
   },
+  "bugs": "https://github.com/editorconfig/editorconfig-core-js/issues",
   "contributors": [
     "Hong Xu (topbug.net)",
     "Jed Mao (https://github.com/jedmao/)",
     "Trey Hunner (http://treyhunner.com)"
   ],
-  "directories": {
-    "bin": "./bin",
-    "lib": "./lib"
-  },
-  "scripts": {
-    "pretest": "cmake .",
-    "test": "npm run lint && ctest .",
-    "test-verbose": "npm run lint && ctest -VV --output-on-failure .",
-    "lint": "eclint check --indent_size ignore editorconfig.js README.md \"bin/**\" \"lib/**\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/editorconfig/editorconfig-core-js.git"
-  },
-  "bugs": "https://github.com/editorconfig/editorconfig-core-js/issues",
-  "author": "EditorConfig Team",
-  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.0.5",
     "commander": "^2.9.0",
@@ -43,5 +23,25 @@
     "eclint": "^1.1.5",
     "mocha": "^2.3.4",
     "should": "^7.1.1"
+  },
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "keywords": [
+    "core",
+    "editorconfig"
+  ],
+  "license": "MIT",
+  "main": "editorconfig.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/editorconfig/editorconfig-core-js.git"
+  },
+  "scripts": {
+    "lint": "eclint check --indent_size ignore editorconfig.js README.md \"bin/**\" \"lib/**\"",
+    "pretest": "cmake .",
+    "test": "npm run lint && ctest .",
+    "test-verbose": "npm run lint && ctest -VV --output-on-failure ."
   }
 }
